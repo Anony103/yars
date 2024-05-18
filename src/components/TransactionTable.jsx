@@ -1,11 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import { transactions } from '../../data';
 import Pagination from './Pagination';
+import TransactionModal from './TransactionModal';
+
 
 const ITEMS_PER_PAGE = 5;
 
 const TransactionTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const totalPages = Math.ceil(transactions.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -17,6 +21,15 @@ const TransactionTable = () => {
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handleProfileClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+
   };
 
   const downloadCSV = () => {
@@ -79,16 +92,16 @@ const TransactionTable = () => {
                 S/N
               </th>
               <th className="font-jakarta-sans p-3 text-left tracking-wide whitespace-nowrap text-base font-medium text-[#9CA4AB] md:table-cell">
-                Transaction ID
+                Events
               </th>
               <th className="font-jakarta-sans p-3 text-left tracking-wide whitespace-nowrap text-base font-medium text-[#9CA4AB] md:table-cell">
-                User
-              </th>
-              <th className="font-jakarta-sans p-3 text-left tracking-wide whitespace-nowrap text-base font-medium text-[#9CA4AB] md:table-cell">
-                Status
+                Dates
               </th>
               <th className="font-jakarta-sans p-3 text-left tracking-wide whitespace-nowrap text-base font-medium text-[#9CA4AB] md:table-cell">
                 Amount(₦)
+              </th>
+              <th className="font-jakarta-sans p-3 text-left tracking-wide whitespace-nowrap text-base font-medium text-[#9CA4AB] md:table-cell">
+                Status
               </th>
               <th className="font-jakarta-sans p-3 text-left tracking-wide whitespace-nowrap text-base font-medium text-[#9CA4AB] md:table-cell">
                 Action
@@ -117,7 +130,9 @@ const TransactionTable = () => {
                   {item.amount}
                 </td>
                 <td className="font-jakarta-sans p-3 tracking-wide whitespace-nowrap text-[14px] font-normal text-[#0D062D]">
-                  View
+                <button className='border px-2 rounded-md' onClick={handleProfileClick}>
+                  more
+                </button>
                 </td>
               </tr>
             ))}
@@ -126,6 +141,7 @@ const TransactionTable = () => {
       </div>
 
       <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+      <TransactionModal isOpen={isModalOpen} onClose={handleCloseModal}/>
     </div>
   );
 };

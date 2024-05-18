@@ -800,6 +800,848 @@ export const customers = [
     },
 ]
 
+export const vendor = [
+    {
+        id:1,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:2,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:3,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }    },
+    {
+        id:4,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:5,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:6,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:7,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:8,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:9,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:10,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:11,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:12,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:13,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:14,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:15,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:16,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:17,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:18,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:19,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:20,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:21,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:22,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:23,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:24,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:25,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:26,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:27,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:28,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:29,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+    {
+        id:30,
+        general:{
+            name:"Bami Foods",
+            regName:"Bami Foods",
+            accountNo:1234567
+        },
+        branch:{
+            name:"Bamijoko Pearl",
+            gender:"Female",
+            email:"pearlbami19@gmail.com",
+            phoneNo:"08012345678",
+            altphoneNo:"08012345678",
+        },
+        bank:{
+                bankName:"Opay Bank",
+                accountName:"Bami Foods",
+                accountNo:2085209073
+            }
+        ,
+        outlet:{
+                dateReg:'01-05-2022',
+                location:'Lagos',
+                Address:"Morgan Estate, Phase 2 , Ojodu Berger, Lagos.",
+                phoneNo:"08084655653",
+                email:"Bamifoods@gmail.com"
+            }
+    },
+]
+
 
 export const transactions = [
     {

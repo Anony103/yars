@@ -1,32 +1,32 @@
 import React, { useState, useMemo } from 'react';
 import pic from '../assets/pic.png';
-import { customers } from '../../data';
+import { vendor } from '../../data';
 import { NavLink } from 'react-router-dom';
 
 const ITEMS_PER_PAGE = 15;
 
-const AllCustomers = () => {
+const AllVendor = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOrder, setSortOrder] = useState('A-Z');
   
-  const filteredCustomers = useMemo(() => {
-    return customers.filter(customer =>
-      customer.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredvendor = useMemo(() => {
+    return vendor.filter(vendor =>
+        vendor.general.name.toLowerCase().includes(searchQuery.toLowerCase())
     ).sort((a, b) => {
       if (sortOrder === 'A-Z') {
-        return a.name.localeCompare(b.name);
+        return a.general.name.localeCompare(b.general.name);
       } else if (sortOrder === 'Z-A') {
-        return b.name.localeCompare(a.name);
+        return b.general.name.localeCompare(a.general.name);
       }
       return 0;
     });
   }, [searchQuery, sortOrder]);
 
-  const totalPages = Math.ceil(filteredCustomers.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(filteredvendor.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentCustomers = filteredCustomers.slice(startIndex, endIndex);
+  const currentVendor = filteredvendor.slice(startIndex, endIndex);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -52,7 +52,7 @@ const AllCustomers = () => {
   const downloadCSV = () => {
     const csvData = [
       ["ID", "Name"],
-      ...customers.map(customer => [customer.id, customer.name])
+      ...vendor.map(vendor => [vendor.id, vendor.general.name])
     ]
     .map(e => e.join(","))
     .join("\n");
@@ -62,18 +62,20 @@ const AllCustomers = () => {
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = 'customers.csv';
+    a.download = 'vendor.csv';
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
   };
 
+  console.log(vendor)
+
   return (
-    <div className='flex flex-col gap-4'>
+    <div className='flex flex-col gap-4 flex-1'>
       <div className='flex items-center justify-between'>
         <div className='flex gap-2'>
-          <h1>All Customers</h1>
-          <div className='bg-[#4BA457] text-white px-2 rounded-md'>{customers.length}</div>
+          <h1>All Vendor</h1>
+          <div className='bg-[#4BA457] text-white px-2 rounded-md'>{vendor.length}</div>
         </div>
         <div className='flex gap-2' onClick={downloadCSV} style={{ cursor: 'pointer' }}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -119,15 +121,15 @@ const AllCustomers = () => {
         </div>
       </div>
       <ol className="px-4">
-        {currentCustomers.map((item, index) => (
+        {currentVendor.map((item, index) => (
           <li className="border-b border-gray-200 py-4" key={index}>
-            <NavLink to={`/customer/${item.id}`} className="flex items-center justify-between">
+            <NavLink to={`/vendor/${item.id}`} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <h1>{item.id}</h1>
                 <div className="">
                   <img src={pic} alt="" className="w-10 h-10 rounded-full" />
                 </div>
-                <h2 className="text-lg font-medium">{item.name}</h2>
+                <h2 className="text-lg font-medium">{item.general.name}</h2>
               </div>
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -164,4 +166,4 @@ const AllCustomers = () => {
   );
 };
 
-export default AllCustomers;
+export default AllVendor;

@@ -3,7 +3,7 @@ import pic from '../assets/pic.png';
 
 const CustomerProfiles = () => {
   return (
-    <div className="flex-2 px-5 py-4 border-2 border-[#EDF2F7] shadow-sm rounded-2xl w-full lg:w-3/5 bg-white">
+    <div className="flex-1 px-5 py-4 border-2 border-[#EDF2F7] shadow-sm rounded-2xl w-full lg:w-2/5 bg-white">
       <h2 className="text-xl font-semibold mb-4">Customer Profile</h2>
       <div className="flex flex-col items-center py-6">
         <div className="w-full">

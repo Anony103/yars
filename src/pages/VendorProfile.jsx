@@ -7,7 +7,7 @@ import TransactionInsight from '../components/TransactionInsight';
 import TransactionTable from '../components/TransactionTable';
 
 
-const CustomerProfile = () => {
+const VendorProfile = () => {
   const { id } = useParams();
   console.log(id);
 
@@ -21,7 +21,7 @@ const CustomerProfile = () => {
       
       <div className='flex flex-col lg:flex-row  gap-2'>
           {/* {customer && (
-            <CustomerProfiles
+            <VendorProfiles
               name={customer.name}
               gender={customer.gender}
               email={customer.email}
@@ -40,4 +40,4 @@ const CustomerProfile = () => {
   );
 };
 
-export default CustomerProfile;
+export default VendorProfile;

@@ -14,6 +14,7 @@ import SuperAdmin from './pages/SuperAdmin'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import CustomerProfile from './pages/CustomerProfile'
+import VendorProfile from './pages/VendorProfile'
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
               <Route path="/support" element={<Support/>} />
               <Route path="/superAdmin" element={<SuperAdmin/>} />
               <Route path="/customer/:id" element={<CustomerProfile/>} />
+              <Route path="/vendor/:id" element={<VendorProfile/>} />
             </Routes>
       </div>
     </div>
