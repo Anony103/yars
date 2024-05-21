@@ -121,7 +121,7 @@ const AllVendor = () => {
       <ol className="px-4">
         {currentVendor.map((item, index) => (
           <li className="border-b border-gray-200 dark:border-gray-700 py-4" key={index}>
-            <NavLink to={`/vendor/${item.id}`} className="flex items-center justify-between">
+            <NavLink to={`/vendors/${item.id}`} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <h1 className='text-gray-900 dark:text-gray-100'>{item.id}</h1>
                 <div className="">

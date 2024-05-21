@@ -1,21 +1,17 @@
-// src/App.js
 import React from 'react';
-import 'tailwindcss/tailwind.css';
+import contain from '../assets/container.png';
 
 const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="flex bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl">
-        {/* Illustration */}
-        <div className="hidden md:block md:w-1/2 bg-orange-500 p-8">
+      <div className="flex bg-white rounded-lg shadow-lg overflow-hidden ">
+        <div className="hidden md:block md:w-1/2">
           <img
-            src="https://via.placeholder.com/400x400" // Replace with your actual image URL
+            src={contain}
             alt="Illustration"
             className="h-full w-full object-cover"
           />
         </div>
-
-        {/* Login Form */}
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-semibold text-gray-700 text-center">Welcome Back!</h2>
           <form className="mt-4">
