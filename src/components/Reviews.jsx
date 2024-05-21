@@ -30,7 +30,7 @@ const Reviews = ({ rating }) => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 text-gray-400"
+          className="w-6 h-6 text-gray-400 dark:text-gray-500"
           key={i}
         >
           <path
@@ -44,19 +44,19 @@ const Reviews = ({ rating }) => {
   }
 
   return (
-    <div className="flex flex-col gap-4 flex-1">
+    <div className="flex flex-col gap-4 flex-1 bg-white dark:bg-gray-800 dark:text-gray-100 p-4 rounded-lg shadow-md">
       <h1 className="text-xl font-bold">Customer Reviews</h1>
       <div className="grid grid-cols-1 sm:grid-cols-1 gap-4">
         {[1, 2].map((review) => (
-          <div className="bg-white p-4 border border-gray-200 rounded-lg flex flex-col gap-2" key={review}>
+          <div className="bg-white dark:bg-gray-700 p-4 border border-gray-200 dark:border-gray-600 rounded-lg flex flex-col gap-2" key={review}>
             <div className="flex gap-2 items-center">
-              <div className="w-10 h-10 rounded-full bg-gray-200"></div>
+              <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-600"></div>
               <div>
                 <h2 className="text-lg font-semibold">Sofia</h2>
-                <p className="text-sm text-gray-500">2 days ago</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">2 days ago</p>
               </div>
             </div>
-            <p className="text-sm text-gray-700">
+            <p className="text-sm text-gray-700 dark:text-gray-300">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
               industry's
             </p>
@@ -64,7 +64,7 @@ const Reviews = ({ rating }) => {
               {stars.map((star, index) => (
                 <span key={index}>{star}</span>
               ))}
-              <h4 className="text-sm text-gray-500">40</h4>
+              <h4 className="text-sm text-gray-500 dark:text-gray-400">40</h4>
             </div>
           </div>
         ))}

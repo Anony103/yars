@@ -18,7 +18,7 @@ const CircleProgressBar = ({ percentage, wid }) => {
           r={radius}
           strokeWidth={20}
           fill="transparent"
-          stroke="#d9d9d9"
+          className="stroke-gray-300 dark:stroke-gray-600"
         />
         <circle
           cx={centerX}
@@ -26,7 +26,7 @@ const CircleProgressBar = ({ percentage, wid }) => {
           r={radius}
           strokeWidth={20}
           fill="transparent"
-          stroke="#00C48C"
+          className="stroke-green-500"
           strokeDasharray={strokeDasharray}
           strokeDashoffset={strokeDashoffset}
           strokeLinecap="round"
@@ -38,7 +38,7 @@ const CircleProgressBar = ({ percentage, wid }) => {
           textAnchor="middle"
           dominantBaseline="middle"
           fontSize="20"
-          fill="#333"
+          className="fill-gray-900 dark:fill-gray-200"
         >
           {percentage}%
         </text>

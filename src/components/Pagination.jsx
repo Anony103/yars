@@ -36,7 +36,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     <div className="flex justify-between items-center mt-4">
       <button
         onClick={() => currentPage > 1 && onPageChange(currentPage - 1)}
-        className={`flex gap-2 px-3 py-1 rounded-md ${currentPage > 1 ? 'bg-[#D8541B] text-white cursor-pointer' : 'border text-gray-500 cursor-not-allowed'}`}
+        className={`flex gap-2 px-3 py-1 dark:text-white rounded-md ${currentPage > 1 ? 'bg-[#D8541B] text-white cursor-pointer' : 'border text-gray-500 cursor-not-allowed'}`}
         disabled={currentPage === 1}
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -51,7 +51,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             <button
               key={index}
               onClick={() => onPageChange(pageNumber)}
-              className={`px-3 py-1 rounded-md ${currentPage === pageNumber ? 'bg-[#D8541B] text-white' : 'border'}`}
+              className={`px-3 py-1 rounded-md dark:text-white ${currentPage === pageNumber ? 'bg-[#D8541B] text-white' : 'border'}`}
             >
               {pageNumber}
             </button>
@@ -64,7 +64,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       </div>
       <button
         onClick={() => currentPage < totalPages && onPageChange(currentPage + 1)}
-        className={`flex gap-2 px-3 py-1 rounded-md ${currentPage < totalPages ? 'bg-[#D8541B] text-white cursor-pointer' : 'border text-gray-500 cursor-not-allowed'}`}
+        className={`flex gap-2 dark:text-white px-3 py-1 rounded-md ${currentPage < totalPages ? 'bg-[#D8541B] text-white cursor-pointer' : 'border text-gray-500 cursor-not-allowed'}`}
         disabled={currentPage === totalPages}
       >
         Next

@@ -16,7 +16,7 @@ const Customer = () => {
           <AllCustomers/>
           </div>
           <div className='flex flex-col gap-2 lg:w-3/5'>
-            <div className='flex flex-col md:flex-row gap-2'>
+            <div className='flex flex-col lg:flex-row gap-2'>
            <CustomerActivity  />
            <TransactionInsight wid={90}/>
             </div>

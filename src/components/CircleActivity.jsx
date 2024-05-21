@@ -18,7 +18,7 @@ const CircleActivity = ({ percentage, wid }) => {
           r={radius}
           strokeWidth={40}
           fill="transparent"
-          stroke="#d47e1c"
+          className="stroke-amber-600 dark:stroke-amber-600"
         />
         <circle
           cx={centerX}
@@ -26,7 +26,7 @@ const CircleActivity = ({ percentage, wid }) => {
           r={radius}
           strokeWidth={40}
           fill="transparent"
-          stroke="#00C48C"
+          className="stroke-green-500"
           strokeDasharray={`${activeCircumference} ${inactiveCircumference}`}
           strokeDashoffset={circumference - activeCircumference}
           strokeLinecap="round"
