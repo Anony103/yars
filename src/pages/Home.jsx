@@ -13,7 +13,7 @@ const Home = () => {
         </div>
         <div className='flex flex-col lg:flex-row p-5 gap-2'>
           <BarChart/>
-          <TransactionInsight wid={50}/>
+          <TransactionInsight wid={90}/>
         </div>
         <div className='flex flex-col md:flex-row p-5 gap-2'>
       <Performance />
