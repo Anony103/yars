@@ -9,9 +9,12 @@ import { MdOutlineNotificationsNone } from "react-icons/md";
 import { PiChatsBold } from "react-icons/pi";
 import { IoPeople } from "react-icons/io5";
 import { FaShop } from "react-icons/fa6";
+import { UserAuth } from '../config/AuthContext';
 
 const Sidebar = ({ isSidebarOpen }) => {
+  const { user } = UserAuth();
   const sidebarClasses = isSidebarOpen ? '' : 'hidden md:flex';
+
   return (
     <section className={`bg-[#F7F8FA] dark:bg-black border-r border-[#EBECF2] w-28 md:w-64 flex flex-col items-center md:items-start justify-between py-8 transition-all duration-300 ${sidebarClasses}`}>
       <nav className="flex flex-col items-center md:items-start w-full">
@@ -39,12 +42,22 @@ const Sidebar = ({ isSidebarOpen }) => {
               <MdOutlinePeople className='w-6 h-6'/>
               <h2 className="hidden md:flex dark:text-white font-normal font-dm">Customers</h2>
             </NavLink>
-            <NavLink to='/vendors' className={({ isActive }) =>
-              isActive ? 'flex gap-4 bg-[#D8541B] font-bold text-white p-4 rounded-lg w-full justify-center md:justify-start' : 'flex gap-4 dark:text-white hover:text-[#D8541B] w-full justify-center md:justify-start'
-            }>
-              <FaShop className='w-6 h-6' />
-              <h2 className="hidden md:flex dark:text-white font-normal font-dm">Vendors</h2>
-            </NavLink>
+            {user?.role !== 'vendor' && (
+              <NavLink to='/vendors' className={({ isActive }) =>
+                isActive ? 'flex gap-4 bg-[#D8541B] font-bold text-white p-4 rounded-lg w-full justify-center md:justify-start' : 'flex gap-4 dark:text-white hover:text-[#D8541B] w-full justify-center md:justify-start'
+              }>
+                <FaShop className='w-6 h-6' />
+                <h2 className="hidden md:flex dark:text-white font-normal font-dm">Vendors</h2>
+              </NavLink>
+            )}
+            {user?.role === 'vendor' && (
+              <NavLink to='/product' className={({ isActive }) =>
+                isActive ? 'flex gap-4 bg-[#D8541B] font-bold text-white p-4 rounded-lg w-full justify-center md:justify-start' : 'flex gap-4 dark:text-white hover:text-[#D8541B] w-full justify-center md:justify-start'
+              }>
+                <CiGrid42 className='w-6 h-6'/>
+                <h2 className="hidden md:flex dark:text-white font-normal font-dm">Products</h2>
+              </NavLink>
+            )}
             <NavLink to='/transactions' className={({ isActive }) =>
               isActive ? 'flex gap-4 bg-[#D8541B] font-bold text-white p-4 rounded-lg w-full justify-center md:justify-start' : 'flex gap-4 dark:text-white hover:text-[#D8541B] w-full justify-center md:justify-start'
             }>
@@ -65,12 +78,14 @@ const Sidebar = ({ isSidebarOpen }) => {
               <PiChatsBold className='w-6 h-6'/>
               <h2 className="hidden md:flex dark:text-white font-normal font-dm">Support</h2>
             </NavLink>
-            <NavLink to='/superAdmin' className={({ isActive }) =>
-              isActive ? 'flex gap-4 bg-[#D8541B] font-bold  text-white p-4 rounded-lg w-full justify-center md:justify-start' : 'flex gap-4 dark:text-white hover:text-[#D8541B] w-full justify-center md:justify-start'
-            }>
-              <IoPeople className='w-6 h-6'/>
-              <h2 className="hidden md:flex font-normal dark:text-white font-dm">Super Admin</h2>
-            </NavLink>
+            {user?.role === 'superAdmin' && (
+              <NavLink to='/superAdmin' className={({ isActive }) =>
+                isActive ? 'flex gap-4 bg-[#D8541B] font-bold  text-white p-4 rounded-lg w-full justify-center md:justify-start' : 'flex gap-4 dark:text-white hover:text-[#D8541B] w-full justify-center md:justify-start'
+              }>
+                <IoPeople className='w-6 h-6'/>
+                <h2 className="hidden md:flex font-normal dark:text-white font-dm">Super Admin</h2>
+              </NavLink>
+            )}
           </ul>
           <ul className="flex flex-col gap-2 w-full items-center md:items-start">
             <li className="flex gap-4 items-center">

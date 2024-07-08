@@ -5,12 +5,18 @@ import pic from '../assets/pic.png';
 import ProfileModal from './ProfileModal';
 import LogoutModal from './LogoutModal';
 import PasswordModal from './PasswordModal';
+import { UserAuth } from '../config/AuthContext';
+
 
 const Navbar = ({ toggleSidebar }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [logoutModalOpen, setLogoutModalOpen] = useState(false);
   const [passwordModalOpen, setPasswordModalOpen] = useState(false);
+  const { user } = UserAuth();
+
+
+  console.log(user);
 
   const handleNavLinkClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
