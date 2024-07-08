@@ -16,8 +16,6 @@ const Navbar = ({ toggleSidebar }) => {
   const { user } = UserAuth();
 
 
-  console.log(user);
-
   const handleNavLinkClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
@@ -83,8 +81,8 @@ const Navbar = ({ toggleSidebar }) => {
           <button className='text-left flex flex-row items-center gap-1' onClick={handleNavLinkClick}>
             <img src={pic} alt="" />
             <div className='hidden md:flex flex-col'>
-              <p className='font-jakarta-sans font-normal text-base dark:text-white'>Justin Bergson</p>
-              <p className='font-jakarta-sans font-normal text-[14px] dark:text-gray-400'>Admin</p>
+              <p className='font-jakarta-sans font-normal text-base dark:text-white'>{user?.name || "Justin Bergson"}</p>
+              <p className='font-jakarta-sans font-normal text-[14px] dark:text-gray-400'>{user?.role}</p>
             </div>
           </button>
           {isDropdownOpen && (
