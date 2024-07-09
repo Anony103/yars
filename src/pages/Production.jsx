@@ -29,7 +29,7 @@ const Production = () => {
 
             {
                (
-                    products.length <= 4 ? (
+                    products.length <= 6 ? (
                         <div className="flex justify-center items-center w-full ">
                             <div className="w-full flex flex-col justify-center items-center gap-5">
                                 <div className="w-full flex justify-center items-center">
