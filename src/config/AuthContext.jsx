@@ -7,6 +7,8 @@ const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [users, setUsers] = useState([]);
+  const [vendors, setVendors] = useState([]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -27,10 +29,10 @@ export const AuthContextProvider = ({ children }) => {
       const user = userCredential.user;
 
       const emailAsDocId = email.replace(/[^a-zA-Z0-9]/g, "_");
-      await setDoc(doc(db, 'vendors', emailAsDocId), {
+      await setDoc(doc(db, 'admins', emailAsDocId), {
         uid: user.uid,
         email,
-        role: 'vendor',
+        role: 'admin',
         ...additionalData
       });
 
@@ -46,10 +48,10 @@ export const AuthContextProvider = ({ children }) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const loggedInUser = userCredential.user;
-  
+
       const emailAsDocId = email.replace(/[^a-zA-Z0-9]/g, "_");
-      const userDoc = await getDoc(doc(db, 'vendors', emailAsDocId));
-  
+      const userDoc = await getDoc(doc(db, 'admins', emailAsDocId));
+
       if (userDoc.exists()) {
         const userData = userDoc.data();
         console.log(userData.role);
@@ -58,7 +60,7 @@ export const AuthContextProvider = ({ children }) => {
       } else {
         console.error('No such document!');
       }
-  
+
       console.log('User logged in:', loggedInUser);
     } catch (error) {
       console.error('Error signing in:', error.message);
@@ -66,47 +68,35 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const fetchAllProducts = async () => {
+  const fetchAllUsers = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, "vendors"));
-      let allProducts = [];
-      querySnapshot.forEach((doc) => {
-        const vendorData = doc.data();
-        if (vendorData.products && vendorData.products.length > 0) {
-          allProducts = [...allProducts, ...vendorData.products];
-        }
-      });
-      return allProducts;
+      const usersCollection = collection(db, 'user');
+      const usersSnapshot = await getDocs(usersCollection);
+      const usersList = usersSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setUsers(usersList);
+      return usersList;
     } catch (error) {
-      console.error('Error fetching products:', error.message);
+      console.error('Error fetching users:', error.message);
       throw error;
     }
   };
 
-  const fetchVendorProducts = async () => {
-    if (!user) {
-      throw new Error("User is not authenticated");
-    }
+  const fetchAllVendors = async () => {
     try {
-      const emailAsDocId = user.email.replace(/[^a-zA-Z0-9]/g, "_");
-      const vendorDocRef = doc(db, 'vendors', emailAsDocId);
-      const vendorDoc = await getDoc(vendorDocRef);
-
-      if (vendorDoc.exists()) {
-        const vendorData = vendorDoc.data();
-        return vendorData.products || [];
-      } else {
-        console.error('No such document!');
-        return [];
-      }
+      const vendorsCollection = collection(db, 'vendors');
+      const vendorsSnapshot = await getDocs(vendorsCollection);
+      const vendorsList = vendorsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setVendors(vendorsList);
+      console.log('All vendors:', vendorsList);
+      return vendorsList;
     } catch (error) {
-      console.error('Error fetching products:', error.message);
+      console.error('Error fetching vendors:', error.message);
       throw error;
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, signUpUser, authenticateUserWithEmailPassword, logOut, fetchAllProducts, fetchVendorProducts }}>
+    <AuthContext.Provider value={{ user, users, vendors, signUpUser, authenticateUserWithEmailPassword, logOut, fetchAllUsers, fetchAllVendors }}>
       {children}
     </AuthContext.Provider>
   );

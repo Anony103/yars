@@ -14,19 +14,13 @@ const SellerSignUp = () => {
             name: '',
             email: '',
             password: '',
-            category: '',
             address: '',
-            businessEmail: '',
-            state: ''
           }}
           onSubmit={async (values, { setSubmitting, setErrors }) => {
             try {
               await signUpUser(values.email, values.password, {
-                name: values.name,
-                category: values.category,
+                displayName: values.name,
                 address: values.address,
-                businessEmail: values.businessEmail,
-                state: values.state
               });
               setSubmitting(false);
             } catch (error) {
@@ -67,25 +61,6 @@ const SellerSignUp = () => {
                 <ErrorMessage name="password" component="div" className="text-red-500 text-sm" />
               </div>
               <div className="mb-4">
-                <label className="block text-gray-700 mb-1" htmlFor="category">Category</label>
-                <Field
-                  as="select"
-                  name="category"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
-                >
-                  <option value="" label="Select category" />
-                  <option value="FoodVendor" label="Food Vendor" />
-                  <option value="EventVendor" label="Event Decoration" />
-                  <option value="DeeJayVendor" label="Dee-Jay" />
-                  <option value="RentalVendor" label="Rental" />
-                  <option value="PhotographersVendor" label="Photographers" />
-                  <option value="BakerVendor" label="Bakers" />
-                  <option value="EmCeeVendor" label="em-cee" />
-                  <option value="LiveBandVendor" label="Live Band" />
-                </Field>
-                <ErrorMessage name="category" component="div" className="text-red-500 text-sm" />
-              </div>
-              <div className="mb-4">
                 <label className="block text-gray-700 mb-1" htmlFor="address">Address</label>
                 <Field
                   type="text"
@@ -94,26 +69,6 @@ const SellerSignUp = () => {
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
                 />
                 <ErrorMessage name="address" component="div" className="text-red-500 text-sm" />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-1" htmlFor="businessEmail">Business Email</label>
-                <Field
-                  type="email"
-                  name="businessEmail"
-                  placeholder='business@example.com'
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
-                />
-                <ErrorMessage name="businessEmail" component="div" className="text-red-500 text-sm" />
-              </div>
-              <div className="mb-4">
-                <label className="block text-gray-700 mb-1" htmlFor="state">State</label>
-                <Field
-                  type="text"
-                  name="state"
-                  placeholder='State'
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
-                />
-                <ErrorMessage name="state" component="div" className="text-red-500 text-sm" />
               </div>
               {errors.submit && <div className="text-red-500 text-sm mb-4">{errors.submit}</div>}
               <div className="mb-4">

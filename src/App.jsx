@@ -35,7 +35,7 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/seller-signup" element={<SellerSignUp />} />
-          <Route element={<PrivateRoute roles={['admin', 'superAdmin', 'vendor']} />}>
+          <Route element={<PrivateRoute roles={['admin', 'superAdmin']} />}>
             <Route path="/" element={<Home />} />
             <Route path="/customer" element={<Customer />} />
             <Route path="/product" element={<Production />} />

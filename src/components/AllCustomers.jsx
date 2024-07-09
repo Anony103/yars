@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import pic from '../assets/pic.png';
-import { customers } from '../../data';
 import { NavLink } from 'react-router-dom';
+import { UserAuth } from '../config/AuthContext';
 
 const ITEMS_PER_PAGE = 15;
 
@@ -9,24 +9,37 @@ const AllCustomers = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOrder, setSortOrder] = useState('A-Z');
-  
+  const { users, fetchAllUsers } = UserAuth();
+
+  useEffect(() => {
+    fetchAllUsers();
+  }, [fetchAllUsers]);
+
+  console.log(users);
+
   const filteredCustomers = useMemo(() => {
-    return customers.filter(customer =>
-      customer.name.toLowerCase().includes(searchQuery.toLowerCase())
-    ).sort((a, b) => {
-      if (sortOrder === 'A-Z') {
-        return a.name.localeCompare(b.name);
-      } else if (sortOrder === 'Z-A') {
-        return b.name.localeCompare(a.name);
-      }
-      return 0;
-    });
-  }, [searchQuery, sortOrder]);
+    return users
+      .filter(user =>
+        user.fullName && user.fullName.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      .sort((a, b) => {
+        if (sortOrder === 'A-Z') {
+          return a.fullName.localeCompare(b.fullName);
+        } else if (sortOrder === 'Z-A') {
+          return b.fullName.localeCompare(a.fullName);
+        }
+        return 0;
+      });
+  }, [searchQuery, sortOrder, users]);
+
+  console.log(filteredCustomers);
 
   const totalPages = Math.ceil(filteredCustomers.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
   const currentCustomers = filteredCustomers.slice(startIndex, endIndex);
+
+  console.log(currentCustomers);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -51,8 +64,8 @@ const AllCustomers = () => {
 
   const downloadCSV = () => {
     const csvData = [
-      ["ID", "Name"],
-      ...customers.map(customer => [customer.id, customer.name])
+      ["ID", "Full Name"],
+      ...users.map(user => [user.id, user.fullName])
     ]
     .map(e => e.join(","))
     .join("\n");
@@ -62,7 +75,7 @@ const AllCustomers = () => {
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = 'customers.csv';
+    a.download = 'users.csv';
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
@@ -73,7 +86,7 @@ const AllCustomers = () => {
       <div className='flex items-center justify-between'>
         <div className='flex gap-2'>
           <h1 className='dark:text-white'>All Customers</h1>
-          <div className='bg-[#4BA457] text-white px-2 rounded-md'>{customers.length}</div>
+          <div className='bg-[#4BA457] text-white px-2 rounded-md'>{users.length}</div>
         </div>
         <div className='flex gap-2' onClick={downloadCSV} style={{ cursor: 'pointer' }}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-white">
@@ -123,11 +136,11 @@ const AllCustomers = () => {
           <li className="border-b border-gray-200 py-4" key={index}>
             <NavLink to={`/customer/${item.id}`} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <h1 className='dark:text-white'>{item.id}</h1>
+                <h1 className='dark:text-white'></h1>
                 <div className="">
                   <img src={pic} alt="" className="w-10 h-10 rounded-full" />
                 </div>
-                <h2 className="text-lg font-medium dark:text-white">{item.name}</h2>
+                <h2 className="text-lg font-medium dark:text-white">{item.fullName}</h2>
               </div>
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 dark:text-white">
@@ -144,7 +157,7 @@ const AllCustomers = () => {
           disabled={currentPage === 1}
           className={`flex gap-2 dark:text-white py-2 px-3 rounded-md ${currentPage === 1 ? 'border' : 'bg-[#D8541B] text-white'} `}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
           </svg>
           Previous

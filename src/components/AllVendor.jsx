@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import pic from '../assets/pic.png';
-import { vendor } from '../../data';
 import { NavLink } from 'react-router-dom';
+import { UserAuth } from '../config/AuthContext';
 
 const ITEMS_PER_PAGE = 15;
 
@@ -9,19 +9,26 @@ const AllVendor = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOrder, setSortOrder] = useState('A-Z');
-  
+  const { vendors, fetchAllVendors } = UserAuth();
+
+  useEffect(() => {
+    fetchAllVendors();
+  }, [fetchAllVendors]);
+
   const filteredVendor = useMemo(() => {
-    return vendor.filter(vendor =>
-        vendor.general.name.toLowerCase().includes(searchQuery.toLowerCase())
-    ).sort((a, b) => {
-      if (sortOrder === 'A-Z') {
-        return a.general.name.localeCompare(b.general.name);
-      } else if (sortOrder === 'Z-A') {
-        return b.general.name.localeCompare(a.general.name);
-      }
-      return 0;
-    });
-  }, [searchQuery, sortOrder]);
+    return vendors
+      .filter(vendor =>
+        vendor.businessName && vendor.businessName.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      .sort((a, b) => {
+        if (sortOrder === 'A-Z') {
+          return a.businessName.localeCompare(b.businessName);
+        } else if (sortOrder === 'Z-A') {
+          return b.businessName.localeCompare(a.businessName);
+        }
+        return 0;
+      });
+  }, [searchQuery, sortOrder, vendors]);
 
   const totalPages = Math.ceil(filteredVendor.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -51,8 +58,8 @@ const AllVendor = () => {
 
   const downloadCSV = () => {
     const csvData = [
-      ["ID", "Name"],
-      ...vendor.map(vendor => [vendor.id, vendor.general.name])
+      ["ID", "Business Name"],
+      ...vendors.map(vendor => [vendor.id, vendor.businessName])
     ]
     .map(e => e.join(","))
     .join("\n");
@@ -62,7 +69,7 @@ const AllVendor = () => {
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = 'vendor.csv';
+    a.download = 'vendors.csv';
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
@@ -72,8 +79,8 @@ const AllVendor = () => {
     <div className='flex flex-col gap-4 flex-1'>
       <div className='flex items-center justify-between'>
         <div className='flex gap-2'>
-          <h1 className='text-gray-900 dark:text-gray-100'>All Vendor</h1>
-          <div className='bg-[#4BA457] text-white px-2 rounded-md'>{vendor.length}</div>
+          <h1 className='text-gray-900 dark:text-gray-100'>All Vendors</h1>
+          <div className='bg-[#4BA457] text-white px-2 rounded-md'>{vendors.length}</div>
         </div>
         <div className='flex gap-2' onClick={downloadCSV} style={{ cursor: 'pointer' }}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-900 dark:text-gray-100">
@@ -123,11 +130,11 @@ const AllVendor = () => {
           <li className="border-b border-gray-200 dark:border-gray-700 py-4" key={index}>
             <NavLink to={`/vendors/${item.id}`} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <h1 className='text-gray-900 dark:text-gray-100'>{item.id}</h1>
+                <h1 className='text-gray-900 dark:text-gray-100'></h1>
                 <div className="">
                   <img src={pic} alt="" className="w-10 h-10 rounded-full" />
                 </div>
-                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">{item.general.name}</h2>
+                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">{item.businessName}</h2>
               </div>
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-gray-900 dark:text-gray-100">
