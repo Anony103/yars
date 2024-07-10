@@ -10,10 +10,23 @@ import { PiChatsBold } from "react-icons/pi";
 import { IoPeople } from "react-icons/io5";
 import { FaShop } from "react-icons/fa6";
 import { UserAuth } from '../config/AuthContext';
+import { useNavigate } from 'react-router-dom';
+
 
 const Sidebar = ({ isSidebarOpen }) => {
-  const { user } = UserAuth();
+  const { user, logOut } = UserAuth();
   const sidebarClasses = isSidebarOpen ? '' : 'hidden md:flex';
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      navigate('/login');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   return (
     <section className={`bg-[#F7F8FA] dark:bg-black border-r border-[#EBECF2] w-28 md:w-64 flex flex-col items-center md:items-start justify-between py-8 transition-all duration-300 ${sidebarClasses}`}>
@@ -91,12 +104,12 @@ const Sidebar = ({ isSidebarOpen }) => {
             <li className="flex gap-4 items-center">
               <ToggleSwitch />
             </li>
-            <NavLink to='' className="flex gap-4 justify-center md:justify-start w-full">
+            <button onClick={handleLogout} className="flex gap-4 justify-center md:justify-start w-full">
               <div className="text-white hover:text-gray-400">
                 <img src={logout} alt="Logout" className="w-6 h-6" />
               </div>
               <h2 className="hidden md:flex font-normal font-dm text-[#D8541B]">Logout</h2>
-            </NavLink>
+            </button>
           </ul>
         </div>
       </nav>

@@ -81,6 +81,21 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
+  const fetchCustomerById = async (id) => {
+    try {
+      const customerDoc = await getDoc(doc(db, 'user', id));
+      if (customerDoc.exists()) {
+        return { id: customerDoc.id, ...customerDoc.data() };
+      } else {
+        console.error('No such customer!');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error fetching customer:', error.message);
+      throw error;
+    }
+  };
+
   const fetchAllVendors = async () => {
     try {
       const vendorsCollection = collection(db, 'vendors');
@@ -95,8 +110,23 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
+  const fetchVendorById = async (id) => {
+    try {
+      const VendorDoc = await getDoc(doc(db, 'vendors', id));
+      if (VendorDoc.exists()) {
+        return { id: VendorDoc.id, ...VendorDoc.data() };
+      } else {
+        console.error('No such VendorDoc!');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error fetching VendorDoc:', error.message);
+      throw error;
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, users, vendors, signUpUser, authenticateUserWithEmailPassword, logOut, fetchAllUsers, fetchAllVendors }}>
+    <AuthContext.Provider value={{ user, users, vendors, signUpUser, authenticateUserWithEmailPassword, logOut, fetchAllUsers, fetchAllVendors, fetchCustomerById, fetchVendorById }}>
       {children}
     </AuthContext.Provider>
   );

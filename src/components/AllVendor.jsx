@@ -130,7 +130,7 @@ const AllVendor = () => {
           <li className="border-b border-gray-200 dark:border-gray-700 py-4" key={index}>
             <NavLink to={`/vendors/${item.id}`} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <h1 className='text-gray-900 dark:text-gray-100'></h1>
+                <h1 className='text-gray-900 dark:text-gray-100'>{index}</h1>
                 <div className="">
                   <img src={pic} alt="" className="w-10 h-10 rounded-full" />
                 </div>

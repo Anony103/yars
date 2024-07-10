@@ -1,19 +1,22 @@
 import React from 'react';
 import pic from '../assets/pic.png';
 import { UserAuth } from '../config/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const LogoutModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
-  const {logOut} = UserAuth();
+
+  const { logOut } = UserAuth();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
       await logOut();
+      navigate('/login');
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
-
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">

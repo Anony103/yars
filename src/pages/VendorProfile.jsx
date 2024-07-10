@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { customers } from '../../data';
 import { useParams } from 'react-router-dom';
+import { UserAuth } from '../config/AuthContext';
 import Wiget from '../components/Wiget';
 import VendorProfiles from '../components/VendorProfiles';
 import Hisory from '../components/History';
@@ -16,9 +17,31 @@ const VendorProfile = () => {
   };
 
   const { id } = useParams();
-  console.log(id);
+  const { fetchVendorById } = UserAuth();
+  const [vendor, setVendor] = useState(null);
 
-  const customer = customers.find((item) => item.id === id);
+
+  useEffect(() => {
+    const getCustomer = async () => {
+      try {
+        const fetchedVendor = await fetchVendorById(id);
+        setVendor(fetchedVendor);
+      } catch (error) {
+        console.error('Error fetching customer:', error);
+        setVendor(null);
+      }
+    };
+
+    getCustomer();
+  }, [id, fetchVendorById]);
+
+  useEffect(() => {
+    console.log('Vendor:', vendor);
+  }, [vendor]);
+
+  if (vendor === null) {
+    return <div>Loading...</div>;
+  }
 
   const render = () => {
     if (selectedOption === 'profile') {
@@ -29,7 +52,7 @@ const VendorProfile = () => {
       </div>
       
       <div className='flex flex-col lg:flex-row  gap-2'>
-          <VendorProfiles/>
+          <VendorProfiles vendor={vendor}/>
       </div>
 
     </div>

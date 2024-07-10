@@ -1,7 +1,7 @@
 import React from 'react';
 import pic from '../assets/pic.png';
 
-const CustomerProfiles = () => {
+const CustomerProfiles = ({customer}) => {
   return (
     <div className="flex-2 px-5 py-4 border-2 border-[#EDF2F7] dark:border-gray-700 shadow-sm rounded-2xl w-full lg:w-3/5 bg-white dark:bg-gray-800">
       <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-200">Customer Profile</h2>
@@ -12,23 +12,23 @@ const CustomerProfiles = () => {
             <div className="flex flex-col space-y-2 w-full md:w-2/3">
               <div className="flex items-center">
                 <h4 className="font-medium w-1/3 text-gray-900 dark:text-gray-300">Name:</h4>
-                <p className="w-2/3 text-gray-700 dark:text-gray-400">Anjous</p>
+                <p className="w-2/3 text-gray-700 dark:text-gray-400">{customer.fullName}</p>
               </div>
               <div className="flex items-center">
                 <h4 className="font-medium w-1/3 text-gray-900 dark:text-gray-300">Gender:</h4>
-                <p className="w-2/3 text-gray-700 dark:text-gray-400">Female</p>
+                <p className="w-2/3 text-gray-700 dark:text-gray-400">Male</p>
               </div>
               <div className="flex items-center">
                 <h4 className="font-medium w-1/3 text-gray-900 dark:text-gray-300">Email:</h4>
-                <p className="w-2/3 text-gray-700 dark:text-gray-400">eleanorpena@domain.com</p>
+                <p className="w-2/3 text-gray-700 dark:text-gray-400">{customer.email}</p>
               </div>
               <div className="flex items-center">
                 <h4 className="font-medium w-1/3 text-gray-900 dark:text-gray-300">Phone No:</h4>
-                <p className="w-2/3 text-gray-700 dark:text-gray-400">08012345678</p>
+                <p className="w-2/3 text-gray-700 dark:text-gray-400">{customer.phoneNumber || "08012345678"}</p>
               </div>
               <div className="flex items-center">
                 <h4 className="font-medium w-1/3 text-gray-900 dark:text-gray-300">Address:</h4>
-                <p className="w-2/3 text-gray-700 dark:text-gray-400">1, Check Street, Ibadan, Nigeria</p>
+                <p className="w-2/3 text-gray-700 dark:text-gray-400">{customer.address ||'1, Check Street, Ibadan, Nigeria'}</p>
               </div>
             </div>
             <img src={pic} alt="User" className="w-24 h-24 rounded-full mb-4 md:mb-0" />

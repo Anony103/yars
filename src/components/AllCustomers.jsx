@@ -136,7 +136,7 @@ const AllCustomers = () => {
           <li className="border-b border-gray-200 py-4" key={index}>
             <NavLink to={`/customer/${item.id}`} className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <h1 className='dark:text-white'></h1>
+                <h1 className='dark:text-white'>{index}</h1>
                 <div className="">
                   <img src={pic} alt="" className="w-10 h-10 rounded-full" />
                 </div>
